@@ -1,0 +1,17 @@
+node_modules
+app/node_modules
+app/dist
+server/node_modules
+.DS_Store
+
+# Тайни / env — НЕ комитвай
+.env
+*.env
+.env.*
+app/.env
+server/.env
+
+# Build / кеш
+dist
+.vercel
+*.log

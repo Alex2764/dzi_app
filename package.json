@@ -1,0 +1,12 @@
+{
+  "name": "dzi-it-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build --prefix app"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0"
+  }
+}
