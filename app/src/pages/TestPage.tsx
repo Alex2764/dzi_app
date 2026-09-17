@@ -107,9 +107,6 @@ export default function TestPage() {
             <Link to={`/module/${moduleId}/lesson/${lessonId}`} className="ai-btn secondary">
               Обратно към урока
             </Link>
-            <Link to="/diagnostics" className="ai-btn">
-              Виж диагностиката
-            </Link>
           </div>
         </div>
       </div>

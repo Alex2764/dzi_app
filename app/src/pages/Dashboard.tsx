@@ -1,4 +1,3 @@
-import { LineChart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { modules } from '../data';
 
@@ -7,13 +6,6 @@ export default function Dashboard() {
     <div className="dashboard">
       <h1>ДЗИ по Информационни технологии</h1>
       <p className="subtitle">Избери модул, за да започнеш подготовката си.</p>
-
-      <div className="dashboard-links">
-        <Link to="/diagnostics" className="my-words-link">
-          <LineChart size={18} strokeWidth={2} />
-          Диагностика — виж къде си слаб
-        </Link>
-      </div>
 
       <div className="topic-grid">
         {modules.map((m) => {
