@@ -2,7 +2,7 @@ import { ClipboardCheck } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import AiTutorButton from '../components/AiTutorButton';
 import TheoryBlocks from '../components/TheoryBlocks';
-import { lessonsContent, questionsByLesson } from '../data';
+import { lessonsContent, moduleSections, questionsByLesson } from '../data';
 import { useProgress } from '../progress/ProgressContext';
 
 export default function LessonPage() {
@@ -12,6 +12,9 @@ export default function LessonPage() {
   const lesson = lessonId ? lessonsContent[lessonId] : undefined;
   const questions = lessonId ? questionsByLesson[lessonId] : undefined;
   const percent = lessonId ? getPercent(lessonId) : undefined;
+  const siblingLessons = moduleId
+    ? (moduleSections[moduleId] ?? []).flatMap((section) => section.lessons)
+    : [];
 
   if (!lesson) {
     return (
@@ -36,7 +39,7 @@ export default function LessonPage() {
 
       <TheoryBlocks blocks={lesson.theory} />
 
-      <AiTutorButton lesson={lesson} />
+      <AiTutorButton lesson={lesson} siblingLessons={siblingLessons} />
 
       {questions && questions.length > 0 && (
         <Link to={`/module/${moduleId}/lesson/${lesson.id}/test`} className="ai-btn">

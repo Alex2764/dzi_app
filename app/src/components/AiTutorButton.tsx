@@ -1,14 +1,20 @@
 import { Check, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { buildTutorPrompt } from '../lib/lessonPrompt';
-import type { Lesson } from '../types';
+import type { Lesson, LessonMeta } from '../types';
 
-export default function AiTutorButton({ lesson }: { lesson: Lesson }) {
+export default function AiTutorButton({
+  lesson,
+  siblingLessons = [],
+}: {
+  lesson: Lesson;
+  siblingLessons?: LessonMeta[];
+}) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
     try {
-      await navigator.clipboard.writeText(buildTutorPrompt(lesson));
+      await navigator.clipboard.writeText(buildTutorPrompt(lesson, siblingLessons));
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
