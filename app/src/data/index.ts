@@ -1,7 +1,10 @@
 import type { Lesson, Question, Section } from '../types';
 import { dataProcessingLessons, dataProcessingSections } from './dataProcessing';
+import { dataProcessingQuestions } from './dataProcessingQuestions';
 import { ictProblemsLessons, ictProblemsSections } from './ictProblems';
+import { ictProblemsQuestions } from './ictProblemsQuestions';
 import { multimediaLessons, multimediaSections } from './multimedia';
+import { multimediaQuestions } from './multimediaQuestions';
 import { webDesignLessons, webDesignQuestions, webDesignSections } from './webDesign';
 
 export { modules } from './modules';
@@ -22,4 +25,7 @@ export const lessonsContent: Record<string, Lesson> = {
 
 export const questionsByLesson: Record<string, Question[]> = {
   ...webDesignQuestions,
+  ...dataProcessingQuestions,
+  ...multimediaQuestions,
+  ...ictProblemsQuestions,
 };
