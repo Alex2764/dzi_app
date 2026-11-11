@@ -1,4 +1,4 @@
-import { GraduationCap, Home } from 'lucide-react';
+import { ClipboardList, ExternalLink, GraduationCap, Home } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const links = [
@@ -26,6 +26,18 @@ export default function NavBar() {
               {link.label}
             </NavLink>
           ))}
+          {/* Отделната платформа за задачи и предаване на решения (dziclaude). */}
+          <a
+            href="https://dziclaude.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="site-nav-link"
+            title="Отваря dziclaude в нов раздел"
+          >
+            <ClipboardList size={16} strokeWidth={2} />
+            Задачи на класа
+            <ExternalLink size={12} strokeWidth={2} />
+          </a>
         </nav>
       </div>
     </header>
